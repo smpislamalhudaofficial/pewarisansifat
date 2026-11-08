@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f28c28">
+  <title>Genetic Adventure | BAB 4 Pewarisan Sifat</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/app.js" defer></script>
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <a class="brand" href="#" data-route="home" aria-label="Kembali ke beranda">
+        <span class="brand-mark" aria-hidden="true">🧬</span>
+        <span class="brand-copy">
+          <strong>GENETIC ADVENTURE</strong>
+          <small>IPA SMP KELAS IX</small>
+        </span>
+      </a>
+      <div class="topbar-actions">
+        <div class="music-controls" aria-label="Kontrol musik latar">
+          <button id="musicToggle" class="music-toggle" type="button" aria-pressed="false" title="Putar musik latar">
+            <span id="musicIcon" aria-hidden="true">▶</span><span id="musicLabel">Musik</span>
+          </button>
+          <button id="musicUpload" class="music-upload" type="button" title="Pilih musik dari perangkat">Ganti</button>
+          <input id="musicFile" type="file" accept="audio/*" hidden>
+          <audio id="backgroundMusic" src="assets/audio/learning-ambient.wav" loop preload="none"></audio>
+        </div>
+        <button id="menuToggle" class="menu-toggle" type="button" aria-expanded="false" aria-controls="menuPanel">
+          <span class="menu-lines" aria-hidden="true"><i></i><i></i><i></i></span><span>Menu</span>
+        </button>
+      </div>
+    </header>
+
+    <nav id="menuPanel" class="menu-panel" hidden aria-label="Navigasi utama">
+      <div class="menu-heading"><strong>Menu Pembelajaran</strong><button id="menuClose" class="menu-close" type="button" aria-label="Tutup menu">×</button></div>
+      <button class="menu-link" data-route="home" type="button"><span>⌂</span> Beranda</button>
+      <button class="menu-link" data-route="apersepsi" type="button"><span>✦</span> Apersepsi</button>
+      <button class="menu-link" data-route="tujuan" type="button"><span>◎</span> Tujuan Pembelajaran</button>
+      <div class="menu-divider"></div>
+      <p class="menu-caption">MATERI PEMBELAJARAN</p>
+      <div id="materialMenu"></div>
+      <div class="menu-divider"></div>
+      <button class="menu-link" data-route="game-menu" type="button"><span>🧪</span> Laboratorium IPA</button>
+      <button class="menu-link" data-route="quiz-intro" type="button"><span>📝</span> Quiz</button>
+      <button class="menu-link" data-route="profile" type="button"><span>👥</span> Profil Pengembang</button>
+      <div class="menu-note">Gunakan tombol kembali dan selanjutnya untuk mengikuti alur belajar.</div>
+    </nav>
+    <button id="menuBackdrop" class="menu-backdrop" type="button" aria-label="Tutup menu" hidden></button>
+
+    <div class="global-progress"><span id="progressFill"></span></div>
+    <main id="appView" class="app-view" tabindex="-1"><div class="loading-state">Menyiapkan ruang belajar...</div></main>
+    <footer class="app-footer"><span>GENETIC ADVENTURE</span><span>Belajar • Eksplorasi • Bermain</span></footer>
+  </div>
+</body>
+</html>
