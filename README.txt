@@ -61,3 +61,10 @@ PEMBARUAN VIDEO DAN PROFIL PENGEMBANG
 - Slideshow memiliki tombol sebelumnya, berikutnya, indikator slide, serta jeda/lanjutkan.
 - Placeholder foto berbentuk rounded rectangle dengan aspect ratio 4:5.
 - Petunjuk penggantian foto tersedia di assets/images/profiles/README.txt.
+
+
+PERBAIKAN FOTO PROFIL
+- Empat foto pengembang sudah disertakan langsung dalam assets/images/profiles/.
+- File foto sudah dinormalisasi menjadi JPEG asli dengan ekstensi .jpg.
+- Foto ditampilkan utuh di dalam bingkai rounded rectangle dengan rasio 4:5, tanpa memotong bagian atas/bawah.
+- Untuk mengganti foto, pertahankan nama file profile-01.jpg sampai profile-04.jpg dan gunakan format JPEG asli.
