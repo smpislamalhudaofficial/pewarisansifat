@@ -630,7 +630,6 @@ function renderDeveloperProfile(){
       </div>
       <div class="profile-playback-row">
         <button class="profile-pause-btn" data-profile-toggle type="button">${state.profilePaused?"▶ Lanjutkan slideshow":"Ⅱ Jeda slideshow"}</button>
-        <span>Empat profil · berganti otomatis</span>
       </div>
     </section>
     <div class="prototype-note">Placeholder foto dapat diganti dengan foto asli. Gunakan rasio 4:5 agar seluruh foto tampil konsisten tanpa mengubah tata letak.</div>`;
