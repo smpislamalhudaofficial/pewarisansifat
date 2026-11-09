@@ -629,10 +629,8 @@ function renderDeveloperProfile(){
         <button class="primary-btn profile-control-btn" data-profile-next type="button" aria-label="Profil berikutnya">Berikutnya →</button>
       </div>
       <div class="profile-playback-row">
-        <button class="profile-pause-btn" data-profile-toggle type="button">${state.profilePaused?"▶ Lanjutkan slideshow":"Ⅱ Jeda slideshow"}</button>
-      </div>
-    </section>
-    <div class="prototype-note">Placeholder foto dapat diganti dengan foto asli. Gunakan rasio 4:5 agar seluruh foto tampil konsisten tanpa mengubah tata letak.</div>`;
+        <button class="profile-pause-btn" data-profile-toggle type="button">${state.profilePaused?"▶ Lanjutkan slideshow":"▐▐ Jeda slideshow"}</button>
+      </div>;
 }
 function stopProfileSlideshow(){
   if(profileTimerHandle){clearInterval(profileTimerHandle);profileTimerHandle=null;}
