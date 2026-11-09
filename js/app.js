@@ -569,7 +569,6 @@ function renderMaterial(){
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
           allowfullscreen></iframe>
       </div>
-      <p class="material-video-note">Video diputar langsung di halaman materi. Pemutaran memerlukan koneksi internet; materi dan aktivitas lainnya tetap dapat digunakan secara offline.</p>
     </section>`:""}
     <div class="activity-card"><span class="eyebrow">AKTIVITAS INTERAKTIF</span>${activityHTML(m.activity)}</div>
     <div class="screen-nav"><button class="secondary-btn" data-action="material-prev" type="button">${i===0?"← Tujuan":"← Materi Sebelumnya"}</button><span class="progress-label">Materi ${i+1} dari 14</span><button class="primary-btn nav-next" data-action="material-next" type="button">${i===materials.length-1?"Ke Laboratorium IPA →":"Materi Selanjutnya →"}</button></div>`;
