@@ -630,7 +630,9 @@ function renderDeveloperProfile(){
       </div>
       <div class="profile-playback-row">
         <button class="profile-pause-btn" data-profile-toggle type="button">${state.profilePaused?"▶ Lanjutkan slideshow":"▐▐ Jeda slideshow"}</button>
-      </div>;
+      </div>
+      </section>
+      <div class="prototype-note">Placeholder foto dapat diganti dengan foto asli. Gunakan rasio 4:5 agar seluruh foto tampil konsisten tanpa mengubah tata letak.</div>`;
 }
 function stopProfileSlideshow(){
   if(profileTimerHandle){clearInterval(profileTimerHandle);profileTimerHandle=null;}
