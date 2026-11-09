@@ -201,7 +201,7 @@ const developerProfiles = [
     institution:"SMP Islam AL Huda Brondong",
     email:"rizqianugerah.perdana@gmail.com",
     instagram:"-",
-    facebook:"Rizqi Anugerah Perdana",
+    facebook:"-",
     image:"profile-01.jpg",
     alt:"Foto profil Rizqi Anugerah Perdana"
   },
@@ -221,7 +221,7 @@ const developerProfiles = [
     institution:"SMP Islam AL Huda Brondong",
     email:"anita.sempia@gmail.com",
     instagram:"-",
-    facebook:"Anieta Sabrina Zahwa",
+    facebook:"-",
     image:"profile-03.jpg",
     alt:"Foto profil Anita Rahayu"
   },
@@ -261,9 +261,9 @@ const quizBank = [
 ];
 
 const gameSets = {
-  puzzle:{title:"Genetic Puzzle",level:"Mudah",duration:300,icon:"🧩",description:"Rakit kemasan DNA, kenali bagian kromosom, dan bedakan gen dengan alel.",stations:3},
-  dna:{title:"DNA Challenge",level:"Menengah",duration:420,icon:"🧬",description:"Susun pasangan basa, lakukan transkripsi, dan klasifikasikan ciri DNA serta RNA.",stations:3},
-  mendel:{title:"Mendel Master",level:"Sulit",duration:600,icon:"🌱",description:"Bangun persilangan monohibrid dan dihibrid menggunakan tabel Punnett interaktif.",stations:2}
+  puzzle:{title:"Genetic Puzzle",level:"Mudah",duration:300,icon:"🧩",description:"Cocokkan ilustrasi komponen materi genetik dengan definisinya, identifikasi bagian kromosom, dan bedakan gen dengan alel.",stations:3},
+  dna:{title:"DNA Challenge",level:"Menengah",duration:420,icon:"🧬",description:"Susun urutan basa DNA dan mRNA menggunakan kartu visual, lalu kelompokkan ciri DNA dan RNA.",stations:3},
+  mendel:{title:"Mendel Master",level:"Sulit",duration:600,icon:"🌱",description:"Pilih gamet induk, amati kombinasi genotipe dan fenotipe, lalu tentukan rasio keturunan pada tabel Punnett.",stations:2}
 };
 
 const labSpecs = {
@@ -271,7 +271,7 @@ const labSpecs = {
     {
       id:"packaging",title:"Stasiun 1 · Merakit kemasan DNA",kind:"sequence",
       description:"Susun komponen dari bahan penyusun hingga menjadi kromosom. DNA membungkus protein histon membentuk nukleosom; nukleosom tersusun menjadi kromatin yang dapat memadat menjadi kromosom.",
-      instruction:"Seret komponen ke slot yang sesuai. Di layar sentuh, ketuk komponen lalu ketuk slot.",
+      instruction:"Pilih kartu gambar, kemudian pilih definisi yang sesuai. Pasangan yang benar akan terkunci.",
       tokens:[
         {id:"dna",label:"DNA"},{id:"histone",label:"Protein histon"},{id:"nucleosome",label:"Nukleosom"},{id:"chromatin",label:"Kromatin"},{id:"chromosome",label:"Kromosom"}
       ],
@@ -286,8 +286,8 @@ const labSpecs = {
     },
     {
       id:"chromosome",title:"Stasiun 2 · Identifikasi bagian kromosom",kind:"grid",
-      description:"Tempatkan nama bagian kromosom berdasarkan fungsi dan letaknya.",
-      instruction:"Pindahkan label ke deskripsi yang tepat. Perhatikan fungsi setiap bagian.",
+      description:"Identifikasi telomer, sentromer, dan kromatid dengan mengetuk hotspot pada ilustrasi kromosom.",
+      instruction:"Baca petunjuk, lalu ketuk marker yang menunjukkan bagian kromosom yang diminta.",
       tokens:[{id:"telomere",label:"Telomer"},{id:"centromere",label:"Sentromer"},{id:"chromatid",label:"Kromatid"}],
       slots:[
         {id:"c1",prompt:"Bagian ujung kromosom yang membantu melindungi ujung DNA",answer:"telomere"},
@@ -298,7 +298,7 @@ const labSpecs = {
     {
       id:"geneallele",title:"Stasiun 3 · Gen atau alel?",kind:"grid",
       description:"Bedakan segmen DNA yang membawa informasi dengan variasi dari segmen gen tersebut.",
-      instruction:"Pasangkan istilah dengan pengertiannya. Setiap label hanya digunakan satu kali.",
+      instruction:"Cocokkan ilustrasi gen dan alel dengan definisi yang tepat.",
       tokens:[{id:"gene",label:"Gen"},{id:"allele",label:"Alel"}],
       slots:[
         {id:"g1",prompt:"Segmen DNA yang mengandung informasi untuk menghasilkan produk fungsional",answer:"gene"},
@@ -309,8 +309,8 @@ const labSpecs = {
   dna:[
     {
       id:"complement",title:"Stasiun 1 · Merakit pasangan basa DNA",kind:"sequence",
-      description:"Lengkapi untai komplementer berdasarkan aturan pasangan basa DNA.",
-      instruction:"Untai cetakan ditampilkan dari arah 3′ ke 5′. Susun pasangan basa pada untai baru dari arah 5′ ke 3′.",
+      description:"Susun basa nitrogen pada untai komplementer dengan mengetuk kartu A, T, G, dan C.",
+      instruction:"Ketuk kartu basa untuk mengisi urutan DNA komplementer dari arah 5′ ke 3′.",
       source:"Untai cetakan DNA: 3′-T A C G G T-5′",
       tokens:[
         {id:"a1",label:"A"},{id:"t1",label:"T"},{id:"g1",label:"G"},{id:"c1",label:"C"},{id:"c2",label:"C"},{id:"a2",label:"A"}
@@ -323,7 +323,7 @@ const labSpecs = {
     },
     {
       id:"transcription",title:"Stasiun 2 · Praktik transkripsi",kind:"sequence",
-      description:"Gunakan untai DNA cetakan untuk menyusun mRNA. Ingat, RNA menggunakan urasil (U), bukan timin (T).",
+      description:"Gunakan untai DNA cetakan untuk menyusun mRNA. RNA menggunakan urasil (U), bukan timin (T). Ketuk kartu basa untuk mengisi urutan.",
       instruction:"Susun sembilan nukleotida mRNA sesuai pasangan transkripsi. Perhatikan arah pembacaan dan kelompok kodon.",
       source:"DNA cetakan: 3′-T A C   G G A   C T T-5′",
       tokens:[
@@ -340,7 +340,7 @@ const labSpecs = {
     {
       id:"classify",title:"Stasiun 3 · Memilah DNA dan RNA",kind:"grid",
       description:"DNA dan RNA memiliki perbedaan pada basa nitrogen, gula, dan struktur untainya.",
-      instruction:"Tempatkan setiap ciri pada slot yang sesuai. Ini adalah aktivitas klasifikasi, bukan soal pilihan ganda.",
+      instruction:"Pilih kartu ciri molekul, lalu ketuk kelompok DNA atau RNA yang sesuai.",
       tokens:[
         {id:"thymine",label:"Timin (T)"},{id:"uracil",label:"Urasil (U)"},{id:"deoxyribose",label:"Deoksiribosa"},
         {id:"ribose",label:"Ribosa"},{id:"double",label:"Umumnya dua untai"},{id:"single",label:"Umumnya satu untai"}
@@ -356,7 +356,7 @@ const labSpecs = {
     {
       id:"monohybrid",title:"Stasiun 1 · Persilangan monohibrid",kind:"punnett-mono",
       description:"Lakukan persilangan Pp × Pp. Alel P menghasilkan bunga ungu dan dominan penuh terhadap alel p yang menghasilkan bunga putih.",
-      instruction:"Isi gamet pada bagian atas dan kiri tabel, lalu isi empat kotak keturunan dengan genotipe yang terbentuk.",
+      instruction:"Pilih alel untuk setiap gamet induk. Sistem akan membentuk empat kombinasi keturunan secara otomatis.",
       tokens:[
         {id:"P",label:"P",reusable:true},{id:"p",label:"p",reusable:true},
         {id:"PP",label:"PP",reusable:true},{id:"Pp",label:"Pp",reusable:true},{id:"pp",label:"pp",reusable:true}
@@ -372,7 +372,7 @@ const labSpecs = {
     {
       id:"dihybrid",title:"Stasiun 2 · Persilangan dihibrid",kind:"punnett-dihybrid",
       description:"Simulasikan persilangan RrYy × RrYy. R = bulat, r = keriput, Y = kuning, dan y = hijau. Kedua gen diasumsikan tidak terpaut dengan dominansi penuh.",
-      instruction:"Tempatkan empat jenis gamet pada setiap induk. Kemudian isi 16 kotak dengan kombinasi genotipe sekaligus fenotipenya. Setiap token menampilkan keduanya.",
+      instruction:"Pilih empat jenis gamet dari masing-masing induk. Sistem akan menghitung 16 kombinasi genotipe dan menampilkan ilustrasi fenotipe secara otomatis.",
       tokens:[
         {id:"RY",label:"RY",reusable:true},{id:"Ry",label:"Ry",reusable:true},{id:"rY",label:"rY",reusable:true},{id:"ry",label:"ry",reusable:true},
         {id:"RRYY",label:"RRYY · Bulat-kuning",reusable:true},{id:"RRYy",label:"RRYy · Bulat-kuning",reusable:true},
@@ -409,7 +409,7 @@ function safeSessionGet(){
   try{
     const raw=sessionStorage.getItem(STORAGE_KEY);
     if(raw){const parsed=JSON.parse(raw);if(parsed&&parsed.route){
-      if(parsed.game&&parsed.game.id&&!parsed.game.placements){parsed.game=null;if(parsed.route.screen==="game"||parsed.route.screen==="game-result")parsed.route={screen:"game-menu",index:0};}
+      if(parsed.game&&parsed.game.id&&!parsed.game.activityState){parsed.game=null;if(parsed.route.screen==="game"||parsed.route.screen==="game-result")parsed.route={screen:"game-menu",index:0};}
       if(parsed.quiz&&(!Array.isArray(parsed.quiz.questionOrder)||parsed.quiz.questionOrder.length!==quizBank.length)){
         parsed.quiz=null;
         if(parsed.route.screen==="quiz"||parsed.route.screen==="quiz-result")parsed.route={screen:"quiz-intro",index:0};
@@ -650,18 +650,17 @@ function startProfileSlideshow(){
 }
 
 function renderGameMenu(){
-  return `${heading("LABORATORIUM IPA","Laboratorium IPA","Pilih praktikum. Seret komponen ke tempatnya, atau ketuk komponen lalu ketuk slot tujuan. Setiap game memiliki aktivitas yang berbeda, bukan soal pilihan ganda.")}
+  return `${heading("LABORATORIUM IPA","Laboratorium IPA","Pilih praktikum. Setiap permainan menggunakan kartu bergambar, identifikasi visual, penyusunan urutan, klasifikasi, dan simulasi persilangan. Semua interaksi dapat dilakukan dengan klik atau ketukan.")}
   <div class="card form-card game-setup-card" style="margin-bottom:18px">
     <div class="field-group"><label for="gamePlayerName">Nama pemain</label><input id="gamePlayerName" class="text-input" placeholder="Masukkan nama kamu" value="${esc(state.game?.name||"")}"></div>
     <div class="field-group" style="margin-top:13px"><label for="gameMode">Mode praktikum</label><select id="gameMode" class="field-control"><option value="practice" ${state.game?.mode!=="challenge"?"selected":""}>Mode latihan · tanpa batas waktu</option><option value="challenge" ${state.game?.mode==="challenge"?"selected":""}>Mode tantangan · menggunakan timer</option></select></div>
-    <p class="muted" style="font-size:12px;margin:9px 0 0">Mode latihan cocok untuk memahami proses. Mode tantangan menambahkan batas waktu, tetapi mekanisme praktikumnya tetap sama.</p>
+    <p class="muted" style="font-size:12px;margin:9px 0 0">Mode latihan cocok untuk memahami proses. Mode tantangan menambahkan batas waktu, tetapi seluruh mekanik tetap sama.</p>
   </div>
   <div class="game-grid">
-    ${Object.entries(gameSets).map(([id,g])=>`<article class="card game-card"><div class="game-icon">${g.icon}</div><span class="badge ${id==="puzzle"?"easy":id==="dna"?"medium":"hard"}">${g.level}</span><h3>${g.title}</h3><p>${g.description}</p><p class="muted">${g.stations} stasiun praktikum · tantangan ${Math.round(g.duration/60)} menit · drag & drop / tap</p><button class="primary-btn" data-game-start="${id}" type="button">Masuk Laboratorium →</button></article>`).join("")}
+    ${Object.entries(gameSets).map(([id,g])=>`<article class="card game-card"><div class="game-icon">${g.icon}</div><span class="badge ${id==="puzzle"?"easy":id==="dna"?"medium":"hard"}">${g.level}</span><h3>${g.title}</h3><p>${g.description}</p><p class="muted">${g.stations} stasiun praktikum · interaksi visual berbasis ketukan</p><button class="primary-btn" data-game-start="${id}" type="button">Masuk Laboratorium →</button></article>`).join("")}
   </div>
-  <div class="prototype-note">Petunjuk: di komputer gunakan mouse untuk menyeret komponen. Di HP atau tablet, ketuk komponen kemudian ketuk slot. Slot yang sudah terisi dapat dikosongkan dengan mengetuknya saat tidak ada komponen yang dipilih.</div>`;
+  <div class="prototype-note">Petunjuk: pilih kartu bergambar, ketuk bagian ilustrasi, susun basa nitrogen, kelompokkan ciri DNA/RNA, atau bangun tabel Punnett. Tidak diperlukan drag & drop.</div>`;
 }
-
 
 function svgArt(viewBox,label,content){
   return `<svg viewBox="${viewBox}" role="img" aria-label="${esc(label)}" class="lab-svg-art">${content}</svg>`;
@@ -944,37 +943,203 @@ function renderStationScene(gameId,station){
 }
 
 
-function labSlot(station,slot,g,compact=false){
-  const placements=g.placements?.[station.id]||{};
-  const tokenId=placements[slot.id]||"";
-  const token=station.tokens.find(t=>t.id===tokenId);
-  const check=g.stationChecks?.[station.id];
-  const status=check?(tokenId===slot.answer?"is-correct":"is-wrong"):"";
-  return `<button type="button" class="lab-slot ${tokenId?"has-token":""} ${status} ${compact?"compact-slot":""}" data-game-slot="${slot.id}" data-station-id="${station.id}" aria-label="${esc(slot.prompt||"Slot praktikum")}: ${token?esc(token.label):"kosong"}">
-    ${compact?"":`<span class="lab-slot-prompt">${esc(slot.prompt||"Tempatkan komponen")}</span>`}
-    <div class="lab-slot-visual">${token?tokenArt(g.id,station.id,token):slotPlaceholderArt(g.id,station,slot)}</div>
-    <strong>${token?esc(token.label):"＋ Letakkan di sini"}</strong>
-    ${token?`<small>Ketuk untuk mengosongkan</small>`:`<small class="slot-hint">Gunakan gambar atau label yang sesuai</small>`}
-  </button>`;
+function getGameActivity(g,stationId){
+  g.activityState=g.activityState||{};
+  if(!g.activityState[stationId])g.activityState[stationId]={};
+  return g.activityState[stationId];
 }
-
-function renderLabWorkspace(station,g){
-  const slotMap=Object.fromEntries(station.slots.map(s=>[s.id,s]));
-  const slot=(id,compact=false)=>labSlot(station,slotMap[id],g,compact);
-  if(station.kind==="sequence"){
-    return `<div class="lab-sequence">${station.slots.map((s,i)=>`${i?'<span class="lab-sequence-arrow" aria-hidden="true">→</span>':''}${slot(s.id)}`).join("")}</div>`;
-  }
-  if(station.kind==="punnett-mono"){
-    return `<div class="punnett-wrap"><table class="lab-punnett mono-punnett"><thead><tr><th>×</th><th>${slot("mc1",true)}</th><th>${slot("mc2",true)}</th></tr></thead><tbody><tr><th>${slot("mr1",true)}</th><td>${slot("m11",true)}</td><td>${slot("m12",true)}</td></tr><tr><th>${slot("mr2",true)}</th><td>${slot("m21",true)}</td><td>${slot("m22",true)}</td></tr></tbody></table></div><p class="lab-table-caption">Baris dan kolom menunjukkan gamet dari masing-masing induk. Empat kotak di bagian tengah menunjukkan kombinasi keturunan.</p>`;
-  }
-  if(station.kind==="punnett-dihybrid"){
-    const headers=["dc1","dc2","dc3","dc4"];
-    const rows=["dr1","dr2","dr3","dr4"];
-    return `<div class="punnett-wrap"><table class="lab-punnett dihybrid-punnett"><thead><tr><th>×</th>${headers.map(id=>`<th>${slot(id,true)}</th>`).join("")}</tr></thead><tbody>${rows.map((rid,r)=>`<tr><th>${slot(rid,true)}</th>${[1,2,3,4].map(c=>`<td>${slot(`d${r+1}${c}`,true)}</td>`).join("")}</tr>`).join("")}</tbody></table></div><p class="lab-table-caption">Tempatkan empat jenis gamet pada setiap induk, lalu klasifikasikan fenotipe dari 16 kombinasi keturunan.</p>`;
-  }
-  return `<div class="lab-slot-grid">${station.slots.map(s=>slot(s.id)).join("")}</div>`;
+function shuffleList(items){
+  const out=items.slice();
+  for(let i=out.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[out[i],out[j]]=[out[j],out[i]];}
+  return out;
 }
-
+function matchingPairsFor(station){
+  const definitions={
+    packaging:{
+      dna:"Molekul utama yang menyimpan informasi genetik.",
+      histone:"Protein yang menjadi tempat DNA melilit.",
+      nucleosome:"Unit yang terbentuk ketika DNA melilit protein histon.",
+      chromatin:"Susunan DNA dan protein yang tersusun dari nukleosom.",
+      chromosome:"Struktur padat pembawa informasi genetik di dalam sel."
+    },
+    geneallele:{
+      gene:"Segmen DNA yang membawa instruksi untuk menghasilkan produk fungsional.",
+      allele:"Bentuk alternatif dari suatu gen pada lokus yang sama."
+    }
+  };
+  return station.tokens.map(t=>({id:t.id,label:t.label,definition:definitions[station.id][t.id],art:tokenArt("puzzle",station.id,t)}));
+}
+function renderMatchingStation(station,g){
+  const a=getGameActivity(g,station.id),pairs=matchingPairsFor(station),matched=new Set(a.matched||[]);
+  if(!a.definitionOrder)a.definitionOrder=shuffleList(pairs.map(p=>p.id));
+  const selectedImage=a.selectedImage||"",selectedDefinition=a.selectedDefinition||"";
+  return `<div class="visual-game-panel">
+    <div class="visual-game-heading"><span class="visual-game-kicker">COCOKKAN GAMBAR DAN KONSEP</span><strong>Pilih satu gambar, lalu pilih definisi yang sesuai.</strong><small>Pasangan yang benar akan terkunci dan menampilkan nama komponennya.</small></div>
+    <div class="matching-board">
+      <section class="matching-column"><h3><span>01</span> Kartu bergambar</h3><div class="matching-card-grid">
+        ${pairs.map((p,i)=>`<button type="button" class="matching-image-card ${matched.has(p.id)?"matched":""} ${selectedImage===p.id?"selected":""}" data-match-image="${p.id}" ${matched.has(p.id)?"disabled":""}>
+          <span class="matching-card-art">${p.art}</span><span class="matching-card-label">${matched.has(p.id)?esc(p.label):`Gambar ${i+1}`}</span>${matched.has(p.id)?'<span class="match-status">✓ Cocok</span>':""}
+        </button>`).join("")}
+      </div></section>
+      <section class="matching-column"><h3><span>02</span> Kartu definisi</h3><div class="matching-definition-list">
+        ${a.definitionOrder.map((id,i)=>{const p=pairs.find(x=>x.id===id);return `<button type="button" class="matching-definition-card ${matched.has(id)?"matched":""} ${selectedDefinition===id?"selected":""}" data-match-definition="${id}" ${matched.has(id)?"disabled":""}>
+          <span class="definition-number">${String.fromCharCode(65+i)}</span><span>${matched.has(id)?`<b>${esc(p.label)}</b><small>Pasangan berhasil ditemukan</small>`:esc(p.definition)}</span>${matched.has(id)?'<span class="match-check">✓</span>':""}
+        </button>`;}).join("")}
+      </div></section>
+    </div>
+    <div class="matching-progress"><span>Pasangan ditemukan</span><strong>${matched.size} / ${pairs.length}</strong><div class="matching-progress-track"><i style="width:${matched.size/pairs.length*100}%"></i></div></div>
+  </div>`;
+}
+function hotspotTasks(){
+  return [
+    {id:"telomere",name:"Telomer",prompt:"Temukan bagian ujung kromosom yang membantu melindungi DNA."},
+    {id:"centromere",name:"Sentromer",prompt:"Temukan daerah penyempitan yang menghubungkan kromatid saudara."},
+    {id:"chromatid",name:"Kromatid",prompt:"Temukan salah satu lengan/sisi dari kromosom yang telah mengganda."}
+  ];
+}
+function renderHotspotStation(station,g){
+  const a=getGameActivity(g,station.id),tasks=hotspotTasks(),step=Math.min(a.step||0,tasks.length),task=tasks[step]||null;
+  return `<div class="visual-game-panel">
+    <div class="visual-game-heading"><span class="visual-game-kicker">IDENTIFIKASI HOTSPOT</span><strong>Ketuk lokasi yang sesuai pada ilustrasi kromosom.</strong><small>Marker A, B, dan C mewakili lokasi yang berbeda. Nama bagian tidak ditampilkan pada gambar.</small></div>
+    <div class="hotspot-game-layout">
+      <div class="hotspot-figure-card"><div class="hotspot-figure-title">PETA BAGIAN KROMOSOM</div>
+        <div class="hotspot-figure">${chromosomeSvg("full")}
+          <button type="button" class="hotspot-marker marker-telomere" data-hotspot="telomere" aria-label="Marker A">A</button>
+          <button type="button" class="hotspot-marker marker-centromere" data-hotspot="centromere" aria-label="Marker B">B</button>
+          <button type="button" class="hotspot-marker marker-chromatid" data-hotspot="chromatid" aria-label="Marker C">C</button>
+        </div>
+        <div class="hotspot-legend"><span><b>A</b> Lokasi 1</span><span><b>B</b> Lokasi 2</span><span><b>C</b> Lokasi 3</span></div>
+      </div>
+      <div class="hotspot-question-card">
+        <span class="hotspot-step">TANTANGAN ${Math.min((a.step||0)+1,tasks.length)} / ${tasks.length}</span>
+        ${task?`<h3>${esc(task.prompt)}</h3><p>Pilih marker pada gambar yang menunjukkan bagian tersebut.</p>`:`<h3>Semua bagian berhasil diidentifikasi!</h3><p>Telomer, sentromer, dan kromatid sudah ditemukan.</p>`}
+        <div class="hotspot-task-list">${tasks.map((t,i)=>`<div class="hotspot-task-item ${i<(a.step||0)?"done":i===(a.step||0)?"current":""}"><span>${i<(a.step||0)?"✓":i+1}</span><div><b>${i<(a.step||0)?esc(t.name):`Bagian ${i+1}`}</b><small>${i<(a.step||0)?"Berhasil diidentifikasi":i===(a.step||0)?"Sedang dicari":"Belum dibuka"}</small></div></div>`).join("")}</div>
+      </div>
+    </div>
+  </div>`;
+}
+function sequenceConfig(station){
+  if(station.id==="complement")return {template:["T","A","C","G","G","T"],target:["A","T","G","C","C","A"],options:["A","T","G","C"],caption:"Untai DNA cetakan ditampilkan dari arah 3′ ke 5′. Susun pasangan komplementer dari arah 5′ ke 3′."};
+  return {template:["T","A","C","G","G","A","C","T","T"],target:["A","U","G","C","C","U","G","A","A"],options:["A","U","G","C"],caption:"Gunakan aturan transkripsi. RNA menggunakan urasil (U), bukan timin (T)."};
+}
+function renderSequenceStation(station,g){
+  const a=getGameActivity(g,station.id),cfg=sequenceConfig(station),letters=a.letters||Array(cfg.target.length).fill(""),filled=letters.filter(Boolean).length;
+  return `<div class="visual-game-panel">
+    <div class="visual-game-heading"><span class="visual-game-kicker">SEQUENCE BUILDER</span><strong>${station.id==="complement"?"Bangun untai DNA komplementer":"Transkripsikan DNA menjadi mRNA"}</strong><small>${esc(cfg.caption)} Ketuk kartu basa untuk mengisi posisi kosong. Ketuk posisi yang terisi untuk menghapusnya.</small></div>
+    <div class="sequence-reference-card">
+      <div class="sequence-reference-label">${station.id==="complement"?"UNTAI DNA CETAKAN":"DNA CETAKAN"}</div>
+      <div class="sequence-base-row">${cfg.template.map((ch,i)=>`<div class="sequence-base-item"><span>${i+1}</span>${nucleotideSvg(ch)}</div>`).join("")}</div>
+      ${station.id==="transcription"?'<div class="sequence-process-arrow">RNA polimerase → mRNA</div>':""}
+    </div>
+    <div class="sequence-answer-card">
+      <div class="sequence-reference-label">${station.id==="complement"?"UNTAI DNA BARU · 5′ → 3′":"URUTAN mRNA · 5′ → 3′"}</div>
+      <div class="sequence-slot-row">${cfg.target.map((_,i)=>`<button type="button" class="sequence-slot ${letters[i]?"filled":""} ${a.checked?(letters[i]===cfg.target[i]?"correct":"wrong"):""}" data-seq-slot="${i}" aria-label="Posisi ${i+1}, ${letters[i]||"kosong"}"><span>${i+1}</span>${letters[i]?nucleotideSvg(letters[i]):'<b class="sequence-empty">?</b>'}</button>`).join("")}</div>
+      <div class="sequence-fill-status">${filled} dari ${cfg.target.length} basa tersusun</div>
+    </div>
+    <div class="sequence-bank"><div class="sequence-bank-title">BANK BASA NITROGEN</div><div class="sequence-bank-cards">${cfg.options.map(ch=>`<button type="button" class="sequence-base-card" data-seq-base="${ch}">${nucleotideSvg(ch)}<b>${ch}</b></button>`).join("")}</div></div>
+  </div>`;
+}
+function sortingCategories(){
+  return {thymine:"DNA",uracil:"RNA",deoxyribose:"DNA",ribose:"RNA",double:"DNA",single:"RNA"};
+}
+function renderSortingStation(station,g){
+  const a=getGameActivity(g,station.id),assigned=a.assigned||{},selected=a.selectedCard||"",tokenById=Object.fromEntries(station.tokens.map(t=>[t.id,t]));
+  const unassigned=station.tokens.filter(t=>!assigned[t.id]);
+  const renderAssigned=(category)=>Object.entries(assigned).filter(([id,value])=>value===category).map(([id])=>{
+    const token=tokenById[id];return `<button type="button" class="sorting-assigned-card" data-sort-remove="${id}" title="Ketuk untuk mengembalikan kartu"><span>${tokenArt("dna",station.id,token)}</span><b>${esc(token.label)}</b><small>↶ Ubah kategori</small></button>`;
+  }).join("");
+  return `<div class="visual-game-panel">
+    <div class="visual-game-heading"><span class="visual-game-kicker">SORTING / CLASSIFICATION</span><strong>Kelompokkan ciri yang termasuk DNA dan RNA.</strong><small>Pilih satu kartu bergambar, lalu ketuk kelompok DNA atau RNA. Kartu dapat dikembalikan jika ingin mengubah jawaban.</small></div>
+    <div class="sorting-bank"><div class="sorting-bank-title">KARTU CIRI MOLEKUL (${unassigned.length} tersisa)</div><div class="sorting-card-tray">
+      ${unassigned.map(t=>`<button type="button" class="sorting-card ${selected===t.id?"selected":""}" data-sort-card="${t.id}"><span class="sorting-card-art">${tokenArt("dna",station.id,t)}</span><b>${esc(t.label)}</b><small>${selected===t.id?"Terpilih · pilih kelompok":"Ketuk untuk memilih"}</small></button>`).join("")}
+      ${unassigned.length===0?'<div class="sorting-all-placed">Semua kartu sudah dikelompokkan.</div>':""}
+    </div></div>
+    <div class="sorting-targets">
+      <section class="sorting-target dna-target"><button type="button" class="sorting-target-head" data-sort-category="DNA"><span>${strandSvg("double")}</span><span><b>DNA</b><small>Ketuk untuk menempatkan kartu terpilih</small></span><strong>${Object.values(assigned).filter(x=>x==="DNA").length}</strong></button><div class="sorting-assigned-list">${renderAssigned("DNA")||'<span class="sorting-empty">Belum ada kartu</span>'}</div></section>
+      <section class="sorting-target rna-target"><button type="button" class="sorting-target-head" data-sort-category="RNA"><span>${strandSvg("single")}</span><span><b>RNA</b><small>Ketuk untuk menempatkan kartu terpilih</small></span><strong>${Object.values(assigned).filter(x=>x==="RNA").length}</strong></button><div class="sorting-assigned-list">${renderAssigned("RNA")||'<span class="sorting-empty">Belum ada kartu</span>'}</div></section>
+    </div>
+  </div>`;
+}
+function alleleCardSvg(letter){
+  const fill=letter==="P"?"#9c6bff":"#e7eaf0",stroke=letter==="P"?"#6c46cb":"#aab3c2",text=letter==="P"?"#fff":"#657080";
+  return svgArt("0 0 84 84",`Alel ${letter}`,`<circle cx="42" cy="42" r="29" fill="${fill}" stroke="${stroke}" stroke-width="4"/><text x="42" y="53" text-anchor="middle" font-size="34" font-family="Arial" font-weight="900" fill="${text}">${letter}</text>`);
+}
+function gameteSvg(label){
+  const a=String(label||"").split("");
+  return svgArt("0 0 100 76",`Gamet ${label}`,`
+    <rect x="5" y="7" width="90" height="62" rx="18" fill="#fff6e9" stroke="#efd3b0" stroke-width="2"/>
+    <circle cx="34" cy="38" r="18" fill="${a[0]===a[0]?.toUpperCase()?"#8d6bdb":"#d9c9f5"}" stroke="#fff" stroke-width="3"/>
+    <circle cx="67" cy="38" r="18" fill="${a[1]===a[1]?.toUpperCase()?"#e7b93e":"#dcebbf"}" stroke="#fff" stroke-width="3"/>
+    <text x="34" y="44" text-anchor="middle" font-size="18" font-weight="900" fill="#fff">${esc(a[0]||"")}</text>
+    <text x="67" y="44" text-anchor="middle" font-size="18" font-weight="900" fill="#526a32">${esc(a[1]||"")}</text>
+  `);
+}
+function punnettOptions(station){
+  return station.id==="monohybrid"?["P","p"]:["RY","Ry","rY","ry"];
+}
+function isGameteSetCorrect(values,stationId){
+  if(!Array.isArray(values)||values.some(v=>!v))return false;
+  if(stationId==="monohybrid")return values.length===2&&values.slice().sort().join("")==="Pp";
+  return values.length===4&&values.slice().sort().join("|")==["RY","Ry","rY","ry"].sort().join("|");
+}
+function orderedAlleles(a,b){
+  return [a,b].sort((x,y)=>x===y?0:(x===x.toUpperCase()?-1:1)).join("");
+}
+function combineDihybridGametes(a,b){
+  return orderedAlleles(a[0],b[0])+orderedAlleles(a[1],b[1]);
+}
+function phenotypeDihybrid(genotype){
+  return `${genotype.slice(0,2).includes("R")?"Bulat":"Keriput"}-${genotype.slice(2,4).includes("Y")?"Kuning":"Hijau"}`;
+}
+function renderPunnettMatrix(station,a){
+  const mono=station.id==="monohybrid",top=a.top||[],left=a.left||[],count=mono?2:4;
+  const allReady=top.length===count&&left.length===count&&top.every(Boolean)&&left.every(Boolean);
+  if(!allReady)return "";
+  const cell=(rowGamete,colGamete)=>{
+    if(mono){
+      const genotype=orderedAlleles(rowGamete,colGamete),phenotype=genotype.includes("P")?"Ungu":"Putih";
+      return `<div class="punnett-result-cell"><span class="punnett-result-art">${flowerSvg(genotype)}</span><b>${genotype}</b><small>${phenotype}</small></div>`;
+    }
+    const genotype=combineDihybridGametes(rowGamete,colGamete),phenotype=phenotypeDihybrid(genotype);
+    return `<div class="punnett-result-cell"><span class="punnett-result-art">${seedSvg(genotype)}</span><b>${genotype}</b><small>${esc(phenotype)}</small></div>`;
+  };
+  return `<div class="punnett-result-wrap"><div class="punnett-result-title">HASIL KOMBINASI KETURUNAN</div><div class="punnett-table-scroll"><table class="visual-punnett-table"><thead><tr><th>×</th>${top.map(g=>`<th>${mono?alleleCardSvg(g):gameteSvg(g)}</th>`).join("")}</tr></thead><tbody>${left.map(r=>`<tr><th>${mono?alleleCardSvg(r):gameteSvg(r)}</th>${top.map(c=>`<td>${cell(r,c)}</td>`).join("")}</tr>`).join("")}</tbody></table></div></div>`;
+}
+function renderRatioOptions(station,a){
+  const mono=station.id==="monohybrid";
+  const options=mono?[
+    {value:"3:1",label:"3 ungu : 1 putih",counts:[3,1]},
+    {value:"1:3",label:"1 ungu : 3 putih",counts:[1,3]},
+    {value:"2:2",label:"2 ungu : 2 putih",counts:[2,2]}
+  ]:[
+    {value:"9:3:3:1",label:"9 : 3 : 3 : 1",counts:[9,3,3,1]},
+    {value:"3:1:3:1",label:"3 : 1 : 3 : 1",counts:[3,1,3,1]},
+    {value:"1:1:1:1",label:"1 : 1 : 1 : 1",counts:[1,1,1,1]}
+  ];
+  const art=mono?[flowerSvg("PP"),flowerSvg("pp")]:[seedSvg("RrYy"),seedSvg("Rryy"),seedSvg("rrYy"),seedSvg("rryy")];
+  return `<div class="punnett-ratio-section"><div class="punnett-result-title">PILIH RASIO FENOTIPE KETURUNAN</div><div class="punnett-ratio-options">${options.map(o=>`<button type="button" class="punnett-ratio-card ${a.ratio===o.value?"selected":""}" data-punnett-ratio="${o.value}"><span class="ratio-art-row">${art.map((svg,i)=>`<span>${svg}<small>${o.counts[i]}</small></span>`).join("")}</span><b>${esc(o.label)}</b></button>`).join("")}</div></div>`;
+}
+function renderPunnettStation(station,g){
+  const a=getGameActivity(g,station.id),mono=station.id==="monohybrid",count=mono?2:4,options=punnettOptions(station),top=a.top||Array(count).fill(null),left=a.left||Array(count).fill(null);
+  const active=a.activeSlot||"top:0";
+  const parentSlots=(side,values,label)=>`<div class="punnett-parent-row"><div class="punnett-parent-label">${label}</div><div class="punnett-gamete-slots">${values.map((v,i)=>`<button type="button" class="punnett-gamete-slot ${active===`${side}:${i}`?"active":""} ${v?"filled":""}" data-punnett-slot="${side}" data-index="${i}"><span>${i+1}</span>${v?(mono?alleleCardSvg(v):gameteSvg(v)):'<b>?</b>'}<small>${v?esc(v):"Pilih gamet"}</small></button>`).join("")}</div></div>`;
+  return `<div class="visual-game-panel">
+    <div class="visual-game-heading"><span class="visual-game-kicker">INTERACTIVE PUNNETT SQUARE</span><strong>${mono?"Simulasikan persilangan monohibrid Pp × Pp":"Simulasikan persilangan dihibrid RrYy × RrYy"}</strong><small>${mono?"P dominan (bunga ungu), p resesif (bunga putih).":"R = bulat, r = keriput, Y = kuning, y = hijau. Kedua gen diasumsikan tidak terpaut."} Pilih slot gamet, lalu pilih kartu alel/gamet di bawahnya.</small></div>
+    <div class="punnett-parent-visual">${mono?`<div>${flowerSvg("Pp")}<b>Induk 1 · Pp</b></div><span>×</span><div>${flowerSvg("Pp")}<b>Induk 2 · Pp</b></div>`:`<div>${seedSvg("RrYy")}<b>Induk 1 · RrYy</b></div><span>×</span><div>${seedSvg("RrYy")}<b>Induk 2 · RrYy</b></div>`}</div>
+    <div class="punnett-gamete-builder">${parentSlots("top",top,"GAMET INDUK 1 · BAGIAN ATAS")}${parentSlots("left",left,"GAMET INDUK 2 · BAGIAN SAMPING")}</div>
+    <div class="punnett-option-bank"><div class="sequence-bank-title">PILIH KARTU ${mono?"ALEL":"GAMET"}</div><div class="punnett-option-cards">${options.map(v=>`<button type="button" class="punnett-option-card" data-punnett-option="${v}">${mono?alleleCardSvg(v):gameteSvg(v)}<b>${v}</b></button>`).join("")}</div></div>
+    ${renderPunnettMatrix(station,a)}
+    ${(top.every(Boolean)&&left.every(Boolean))?renderRatioOptions(station,a):""}
+  </div>`;
+}
+function renderVisualActivity(station,g){
+  if(station.id==="packaging"||station.id==="geneallele")return renderMatchingStation(station,g);
+  if(station.id==="chromosome")return renderHotspotStation(station,g);
+  if(station.id==="complement"||station.id==="transcription")return renderSequenceStation(station,g);
+  if(station.id==="classify")return renderSortingStation(station,g);
+  if(station.id==="monohybrid"||station.id==="dihybrid")return renderPunnettStation(station,g);
+  return '<div class="visual-game-panel">Aktivitas belum tersedia.</div>';
+}
 function renderGame(){
   const g=state.game;if(!g)return renderGameMenu();
   const set=gameSets[g.id],stations=labSpecs[g.id]||[];
@@ -982,50 +1147,62 @@ function renderGame(){
   if(!station)return renderGameResult();
   const completed=stations.filter(s=>g.stationCompleted?.[s.id]).length;
   const remaining=g.mode==="challenge"?Math.max(0,Math.ceil((g.deadline-Date.now())/1000)):Math.max(0,Math.floor((Date.now()-g.startedAt)/1000));
-  const check=g.stationChecks?.[station.id];
-  const feedback=g.stationFeedback?.[station.id];
-  const placements=g.placements?.[station.id]||{};
-  const filled=Object.keys(placements).length;
-  const used=Object.values(placements);
-  const tokens=station.tokens.filter(t=>t.reusable||!used.includes(t.id));
-  const tokenHtml=tokens.map(t=>`<button type="button" class="lab-token ${g.selectedToken?.stationId===station.id&&g.selectedToken?.tokenId===t.id?"selected":""}" draggable="true" data-game-token="${t.id}" data-station-id="${station.id}" aria-pressed="${g.selectedToken?.stationId===station.id&&g.selectedToken?.tokenId===t.id?"true":"false"}">
-      <div class="lab-token-art">${tokenArt(g.id,station.id,t)}</div>
-      <span class="lab-token-text">${esc(t.label)}</span>
-      <span class="lab-token-grip">⠿</span>
-    </button>`).join("");
+  const check=g.stationChecks?.[station.id],feedback=g.stationFeedback?.[station.id];
   const isStationComplete=!!g.stationCompleted?.[station.id];
+  const progress=getStationProgress(g,station);
   return `${heading("VIRTUAL BIOLOGY LAB",set.title,`Pemain: ${esc(g.name)} · ${g.mode==="challenge"?"Mode tantangan":"Mode latihan"}`)}
   <div class="lab-topline"><div class="lab-progress"><strong>${completed} / ${stations.length}</strong><span>stasiun selesai</span><div class="lab-progress-track"><i style="width:${completed/stations.length*100}%"></i></div></div><div class="lab-clock"><span>${g.mode==="challenge"?"Sisa waktu":"Waktu praktikum"}</span><strong id="gameTimer">${formatTime(remaining)}</strong></div></div>
   <div class="lab-station-nav">${stations.map((s,i)=>`<span class="lab-station-step ${i===index?"active":""} ${g.stationCompleted?.[s.id]?"done":""}"><b>${i+1}</b>${esc(s.title.split("·")[1]?.trim()||s.title)}</span>`).join("")}</div>
   <section class="card lab-station-card">
     <div class="lab-station-heading"><div><span class="eyebrow">STASIUN ${index+1} DARI ${stations.length}</span><h2>${esc(station.title.split("·")[1]?.trim()||station.title)}</h2></div><span class="badge ${isStationComplete?"easy":"neutral"}">${isStationComplete?"Selesai":"Sedang dikerjakan"}</span></div>
     <p class="lab-description">${esc(station.description)}</p>
-    ${station.source?`<div class="lab-source"><span>MODEL / DATA PRAKTIKUM</span><strong>${esc(station.source)}</strong></div>`:""}
     <p class="lab-instruction"><strong>Instruksi:</strong> ${esc(station.instruction)}</p>
-    <div class="lab-layout">
-      ${renderStationScene(g.id,station)}
-      <div class="lab-activity-panel">
-        <div class="lab-token-area"><div class="lab-section-label">BANK KOMPONEN <span>Seret atau ketuk komponen visual di bawah ini</span></div><div class="lab-token-tray">${tokenHtml}</div></div>
-        <div class="lab-workspace"><div class="lab-section-label">MEJA PRAKTIKUM <span>${filled} / ${station.slots.length} slot terisi</span></div>${renderLabWorkspace(station,g)}</div>
-      </div>
-    </div>
+    ${renderVisualActivity(station,g)}
+    <div class="visual-activity-progress"><span>Aktivitas benar</span><strong>${progress.correct} / ${progress.total}</strong></div>
     ${feedback?`<div class="lab-feedback ${check?.complete?"success":"warning"}"><strong>${check?.complete?"Eksperimen berhasil!":"Perlu diperbaiki"}</strong><span>${esc(feedback)}</span></div>`:""}
-    ${check?.complete?`<div class="lab-output"><span>HASIL / KESIMPULAN</span><strong>${esc(station.output||"Semua komponen ditempatkan dengan benar.")}</strong></div>`:""}
+    ${check?.complete?`<div class="lab-output"><span>HASIL / KESIMPULAN</span><strong>${esc(station.output||"Seluruh aktivitas berhasil diselesaikan.")}</strong></div>`:""}
     <div class="lab-actions">${isStationComplete?(index<stations.length-1?`<button class="primary-btn" data-game-next-station type="button">Lanjut ke Stasiun ${index+2} →</button>`:`<button class="primary-btn" data-game-finish type="button">Selesaikan Praktikum →</button>`):`<button class="primary-btn" data-game-check="${station.id}" type="button">Periksa Hasil Praktikum</button>`}<button class="secondary-btn" data-route="game-menu" type="button">Keluar ke Menu</button></div>
-  </section>
-  <div class="prototype-note">Catatan: sekarang setiap permainan dilengkapi ilustrasi visual. Komponen yang sudah ditempatkan dapat dipindahkan. Ketuk slot yang terisi saat tidak memilih komponen untuk mengosongkannya.</div>`;
+  </section>`;
 }
-
+function getStationProgress(g,station){
+  const a=getGameActivity(g,station.id);
+  if(station.id==="packaging"||station.id==="geneallele"){
+    const total=matchingPairsFor(station).length,filled=(a.matched||[]).length;
+    return {total,filled,correct:filled};
+  }
+  if(station.id==="chromosome"){
+    const total=hotspotTasks().length,filled=Math.min(a.step||0,total);
+    return {total,filled,correct:filled};
+  }
+  if(station.id==="complement"||station.id==="transcription"){
+    const cfg=sequenceConfig(station),letters=a.letters||[];
+    const filled=letters.filter(Boolean).length,correct=letters.reduce((sum,v,i)=>sum+(v===cfg.target[i]?1:0),0);
+    return {total:cfg.target.length,filled,correct};
+  }
+  if(station.id==="classify"){
+    const cats=sortingCategories(),assigned=a.assigned||{},filled=Object.keys(assigned).length;
+    const correct=Object.entries(assigned).filter(([id,value])=>cats[id]===value).length;
+    return {total:station.tokens.length,filled,correct};
+  }
+  if(station.id==="monohybrid"||station.id==="dihybrid"){
+    const n=station.id==="monohybrid"?2:4,top=a.top||[],left=a.left||[];
+    const expected=station.id==="monohybrid"?["P","p"]:["RY","Ry","rY","ry"];
+    const rowCorrect=values=>{
+      if(values.length===n&&values.every(Boolean)&&isGameteSetCorrect(values,station.id))return n;
+      return values.reduce((sum,v,i)=>sum+(v===expected[i]?1:0),0);
+    };
+    const filled=top.filter(Boolean).length+left.filter(Boolean).length+(a.ratio?1:0);
+    const correct=rowCorrect(top)+rowCorrect(left)+(a.ratio===(station.id==="monohybrid"?"3:1":"9:3:3:1")?1:0);
+    return {total:n*2+1,filled,correct};
+  }
+  return {total:station.slots?.length||1,filled:0,correct:0};
+}
 function getLabStats(g){
   const stations=labSpecs[g.id]||[];
   let totalSlots=0,filledSlots=0,correctSlots=0,completedStations=0;
   stations.forEach(s=>{
-    totalSlots+=s.slots.length;
-    const placed=g.placements?.[s.id]||{};
-    s.slots.forEach(slot=>{
-      const value=placed[slot.id];
-      if(value){filledSlots++;if(value===slot.answer)correctSlots++;}
-    });
+    const p=getStationProgress(g,s);
+    totalSlots+=p.total;filledSlots+=p.filled;correctSlots+=p.correct;
     if(g.stationCompleted?.[s.id])completedStations++;
   });
   const accuracy=totalSlots?correctSlots/totalSlots:0;
@@ -1035,15 +1212,14 @@ function getLabStats(g){
   const breakdown={placement:Math.round(40*accuracy),completion:Math.round(25*completion),consistency:Math.round(20*consistency),efficiency:Math.round(15*efficiency)};
   return {totalSlots,filledSlots,correctSlots,completedStations,totalStations:stations.length,mistakes:g.mistakes||0,breakdown,score:Math.min(100,Object.values(breakdown).reduce((a,b)=>a+b,0))};
 }
-
 function renderGameResult(){
   const g=state.game;if(!g)return renderGameMenu();
   const set=gameSets[g.id],stats=getLabStats(g);
   const stations=labSpecs[g.id]||[];
   return `${heading("HASIL PRAKTIKUM","Laboratorium Selesai!",g.timedOut?"Waktu tantangan telah berakhir. Berikut hasil pekerjaanmu.":"Berikut laporan hasil praktikum yang sudah kamu kerjakan.")}
   <div class="result-hero"><div class="eyebrow">LAPORAN ${set.title.toUpperCase()}</div><h2>${esc(g.name)}</h2><div class="result-score">${stats.score}</div><p>Skor praktikum dari 100 poin</p></div>
-  <div class="stat-grid" style="margin-top:15px"><div class="card stat-card"><div class="stat-value">${stats.correctSlots}/${stats.totalSlots}</div><div class="stat-label">Penempatan benar</div></div><div class="card stat-card"><div class="stat-value">${stats.completedStations}/${stats.totalStations}</div><div class="stat-label">Stasiun selesai</div></div><div class="card stat-card"><div class="stat-value">${formatTime(g.elapsed||0)}</div><div class="stat-label">Waktu digunakan</div></div></div>
-  <div class="card lab-score-card"><h3>Rincian penilaian</h3><div class="lab-score-row"><span>Ketepatan penempatan</span><strong>${stats.breakdown.placement}/40</strong></div><div class="lab-score-row"><span>Ketuntasan stasiun</span><strong>${stats.breakdown.completion}/25</strong></div><div class="lab-score-row"><span>Konsistensi hasil eksperimen</span><strong>${stats.breakdown.consistency}/20</strong></div><div class="lab-score-row"><span>Efisiensi pengerjaan</span><strong>${stats.breakdown.efficiency}/15</strong></div><p class="muted">Jumlah koreksi saat pemeriksaan: ${stats.mistakes}. Skor dihitung dari ketepatan penempatan, stasiun yang dituntaskan, konsistensi hasil, dan efisiensi pengerjaan.</p></div>
+  <div class="stat-grid" style="margin-top:15px"><div class="card stat-card"><div class="stat-value">${stats.correctSlots}/${stats.totalSlots}</div><div class="stat-label">Aktivitas benar</div></div><div class="card stat-card"><div class="stat-value">${stats.completedStations}/${stats.totalStations}</div><div class="stat-label">Stasiun selesai</div></div><div class="card stat-card"><div class="stat-value">${formatTime(g.elapsed||0)}</div><div class="stat-label">Waktu digunakan</div></div></div>
+  <div class="card lab-score-card"><h3>Rincian penilaian</h3><div class="lab-score-row"><span>Ketepatan aktivitas</span><strong>${stats.breakdown.placement}/40</strong></div><div class="lab-score-row"><span>Ketuntasan stasiun</span><strong>${stats.breakdown.completion}/25</strong></div><div class="lab-score-row"><span>Konsistensi hasil eksperimen</span><strong>${stats.breakdown.consistency}/20</strong></div><div class="lab-score-row"><span>Efisiensi pengerjaan</span><strong>${stats.breakdown.efficiency}/15</strong></div><p class="muted">Jumlah koreksi saat pemeriksaan: ${stats.mistakes}. Skor dihitung dari ketepatan aktivitas visual, stasiun yang dituntaskan, konsistensi jawaban, dan efisiensi pengerjaan.</p></div>
   <div class="card lab-score-card"><h3>Rekap stasiun</h3>${stations.map((s,i)=>`<div class="lab-score-row"><span>${i+1}. ${esc(s.title.split("·")[1]?.trim()||s.title)}</span><strong>${g.stationCompleted?.[s.id]?"Selesai":"Belum selesai"}</strong></div>`).join("")}</div>
   <div class="btn-row"><button class="secondary-btn" data-route="game-menu" type="button">← Kembali ke Laboratorium IPA</button><button class="primary-btn" data-game-retry="${g.id}" type="button">Ulangi Praktikum</button></div>`;
 }
@@ -1197,7 +1373,7 @@ function startGame(id,nameOverride="",modeOverride=""){
   const set=gameSets[id];
   const mode=modeOverride||$("#gameMode")?.value||state.game?.mode||"practice";
   const startedAt=Date.now();
-  state.game={id,name,mode,score:0,activeStation:0,placements:{},stationChecks:{},stationCompleted:{},stationFeedback:{},selectedToken:null,mistakes:0,attempts:{},startedAt,deadline:mode==="challenge"?startedAt+set.duration*1000:null,elapsed:0,timedOut:false};
+  state.game={id,name,mode,score:0,activeStation:0,placements:{},stationChecks:{},stationCompleted:{},stationFeedback:{},activityState:{},mistakes:0,attempts:{},startedAt,deadline:mode==="challenge"?startedAt+set.duration*1000:null,elapsed:0,timedOut:false};
   state.route={screen:"game",index:0};persist();render();
 }
 function startGameClock(){
@@ -1219,52 +1395,154 @@ function startGameClock(){
   },500);
 }
 function stopGameClock(){if(gameTimerHandle){clearInterval(gameTimerHandle);gameTimerHandle=null;}}
-function selectGameToken(stationId,tokenId){
-  const g=state.game;if(!g||g.id!==Object.keys(labSpecs).find(id=>labSpecs[id].some(s=>s.id===stationId)))return;
-  if(g.selectedToken?.stationId===stationId&&g.selectedToken?.tokenId===tokenId)g.selectedToken=null;
-  else g.selectedToken={stationId,tokenId};
-  persist();render();
-}
-function placeGameToken(stationId,slotId,tokenId){
-  const g=state.game;if(!g||g.mode===undefined)return;
-  const station=(labSpecs[g.id]||[]).find(s=>s.id===stationId);
-  if(!station||!station.slots.some(s=>s.id===slotId)||!station.tokens.some(t=>t.id===tokenId))return;
-  const token=station.tokens.find(t=>t.id===tokenId);
-  const placements=g.placements[stationId]||(g.placements[stationId]={});
-  if(!token.reusable){
-    const existing=Object.entries(placements).find(([id,value])=>value===tokenId&&id!==slotId);
-    if(existing){g.stationFeedback[stationId]="Komponen tersebut sudah ditempatkan. Kosongkan slot sebelumnya jika ingin memindahkannya.";g.selectedToken=null;persist();render();return;}
-  }
-  placements[slotId]=tokenId;
-  g.selectedToken=null;
-  delete g.stationChecks[stationId];delete g.stationCompleted[stationId];
-  g.stationFeedback[stationId]="Susunan berubah. Periksa kembali hasil praktikum setelah semua slot terisi.";
-  persist();render();
-}
-function clearGameSlot(stationId,slotId){
+function clearStationCheck(stationId){
   const g=state.game;if(!g)return;
-  const placements=g.placements?.[stationId];if(!placements||!placements[slotId])return;
-  delete placements[slotId];delete g.stationChecks[stationId];delete g.stationCompleted[stationId];
-  g.stationFeedback[stationId]="Slot dikosongkan. Kamu dapat menempatkan komponen lain.";
-  persist();render();
+  delete g.stationChecks[stationId];delete g.stationCompleted[stationId];
+}
+function handleMatchingChoice(stationId,side,id){
+  const g=state.game,station=(labSpecs[g?.id]||[]).find(s=>s.id===stationId);
+  if(!g||!station)return;
+  const a=getGameActivity(g,stationId),matched=new Set(a.matched||[]);
+  if(matched.has(id))return;
+  if(side==="image")a.selectedImage=id;else a.selectedDefinition=id;
+  if(a.selectedImage&&a.selectedDefinition){
+    if(a.selectedImage===a.selectedDefinition){
+      a.matched=[...(a.matched||[]),id];
+      a.feedback="Pasangan tepat! Gambar dan definisi berhasil dicocokkan.";
+    }else{
+      g.mistakes=(g.mistakes||0)+1;
+      a.feedback="Belum cocok. Perhatikan kembali bentuk dan fungsi komponen biologis tersebut.";
+    }
+    a.selectedImage=null;a.selectedDefinition=null;
+  }else{
+    a.feedback=side==="image"?"Gambar dipilih. Sekarang pilih definisi yang sesuai.":"Definisi dipilih. Sekarang pilih gambar yang sesuai.";
+  }
+  clearStationCheck(stationId);g.stationFeedback[stationId]=a.feedback;persist();render();
+}
+function handleHotspotChoice(stationId,id){
+  const g=state.game;if(!g)return;
+  const a=getGameActivity(g,stationId),tasks=hotspotTasks(),step=a.step||0;
+  if(step>=tasks.length)return;
+  if(id===tasks[step].id){
+    a.step=step+1;a.feedback=`Benar! ${tasks[step].name} berhasil ditemukan pada ilustrasi kromosom.`;
+  }else{
+    g.mistakes=(g.mistakes||0)+1;
+    a.feedback="Lokasi belum tepat. Perhatikan bentuk dan letak bagian kromosom, lalu coba lagi.";
+  }
+  clearStationCheck(stationId);g.stationFeedback[stationId]=a.feedback;persist();render();
+}
+function handleSequenceBase(stationId,letter){
+  const g=state.game,station=(labSpecs[g?.id]||[]).find(s=>s.id===stationId);if(!g||!station)return;
+  const a=getGameActivity(g,stationId),cfg=sequenceConfig(station);
+  a.letters=a.letters||Array(cfg.target.length).fill("");
+  const index=a.letters.findIndex(v=>!v);
+  if(index<0){a.feedback="Semua posisi sudah terisi. Ketuk salah satu posisi untuk mengubahnya.";g.stationFeedback[stationId]=a.feedback;persist();render();return;}
+  a.letters[index]=letter;a.checked=false;a.feedback=`Basa ${letter} ditempatkan pada posisi ${index+1}.`;
+  clearStationCheck(stationId);g.stationFeedback[stationId]=a.feedback;persist();render();
+}
+function clearSequenceSlot(stationId,index){
+  const g=state.game,station=(labSpecs[g?.id]||[]).find(s=>s.id===stationId);if(!g||!station)return;
+  const a=getGameActivity(g,stationId),cfg=sequenceConfig(station);
+  a.letters=a.letters||Array(cfg.target.length).fill("");a.letters[index]="";a.checked=false;
+  a.feedback="Posisi dikosongkan. Pilih basa nitrogen yang benar.";clearStationCheck(stationId);
+  g.stationFeedback[stationId]=a.feedback;persist();render();
+}
+function handleSortingCard(stationId,id){
+  const g=state.game;if(!g)return;
+  const a=getGameActivity(g,stationId);
+  if(a.assigned?.[id])return;
+  a.selectedCard=a.selectedCard===id?null:id;
+  a.feedback=a.selectedCard?"Kartu dipilih. Sekarang tentukan apakah ciri tersebut termasuk DNA atau RNA.":"Pilihan kartu dibatalkan.";
+  g.stationFeedback[stationId]=a.feedback;persist();render();
+}
+function handleSortingCategory(stationId,category){
+  const g=state.game;if(!g)return;
+  const a=getGameActivity(g,stationId),id=a.selectedCard;if(!id){a.feedback="Pilih salah satu kartu ciri terlebih dahulu.";g.stationFeedback[stationId]=a.feedback;persist();render();return;}
+  a.assigned=a.assigned||{};
+  const correct=sortingCategories()[id]===category;
+  a.assigned[id]=category;a.selectedCard=null;
+  if(!correct)g.mistakes=(g.mistakes||0)+1;
+  a.feedback=correct?`Tepat! Kartu berhasil dimasukkan ke kelompok ${category}.`:`Kartu ditempatkan pada ${category}, tetapi perlu ditinjau kembali. Kamu masih dapat memindahkannya.`;
+  clearStationCheck(stationId);g.stationFeedback[stationId]=a.feedback;persist();render();
+}
+function removeSortingCard(stationId,id){
+  const g=state.game;if(!g)return;
+  const a=getGameActivity(g,stationId);if(!a.assigned?.[id])return;
+  delete a.assigned[id];a.selectedCard=id;a.feedback="Kartu dikembalikan ke bank. Pilih kelompok yang tepat.";
+  clearStationCheck(stationId);g.stationFeedback[stationId]=a.feedback;persist();render();
+}
+function setPunnettSlot(stationId,side,index){
+  const g=state.game;if(!g)return;
+  const a=getGameActivity(g,stationId);a.activeSlot=`${side}:${index}`;clearStationCheck(stationId);
+  a.feedback="Slot dipilih. Sekarang ketuk kartu alel atau gamet yang sesuai.";
+  g.stationFeedback[stationId]=a.feedback;persist();render();
+}
+function choosePunnettOption(stationId,value){
+  const g=state.game,station=(labSpecs[g?.id]||[]).find(s=>s.id===stationId);if(!g||!station)return;
+  const a=getGameActivity(g,stationId),n=stationId==="monohybrid"?2:4;
+  a.top=a.top||Array(n).fill(null);a.left=a.left||Array(n).fill(null);
+  let active=a.activeSlot;
+  if(!active){
+    let i=a.top.findIndex(v=>!v);if(i>=0)active=`top:${i}`;
+    else{i=a.left.findIndex(v=>!v);if(i>=0)active=`left:${i}`;}
+  }
+  if(!active){a.feedback="Semua slot gamet sudah terisi. Ketuk slot untuk mengganti isinya.";g.stationFeedback[stationId]=a.feedback;persist();render();return;}
+  const [side,indexText]=active.split(":"),index=Number(indexText);
+  if(!["top","left"].includes(side)||!Number.isInteger(index)||index<0||index>=n)return;
+  a[side][index]=value;
+  let next=a[side].findIndex(v=>!v);
+  if(next>=0)a.activeSlot=`${side}:${next}`;
+  else{
+    const other=side==="top"?"left":"top";next=a[other].findIndex(v=>!v);
+    a.activeSlot=next>=0?`${other}:${next}`:null;
+  }
+  a.feedback=`Gamet ${value} ditempatkan pada ${side==="top"?"baris atas":"kolom samping"}.`;
+  clearStationCheck(stationId);g.stationFeedback[stationId]=a.feedback;persist();render();
+}
+function choosePunnettRatio(stationId,value){
+  const g=state.game;if(!g)return;
+  const a=getGameActivity(g,stationId);a.ratio=value;a.feedback=`Rasio fenotipe ${value} dipilih. Periksa kembali hasil persilangan.`;
+  clearStationCheck(stationId);g.stationFeedback[stationId]=a.feedback;persist();render();
 }
 function checkGameStation(stationId){
   const g=state.game;if(!g)return;
   const station=(labSpecs[g.id]||[]).find(s=>s.id===stationId);if(!station)return;
-  const placements=g.placements[stationId]||{};
-  const correct=station.slots.filter(s=>placements[s.id]===s.answer).length;
-  const filled=station.slots.filter(s=>placements[s.id]).length;
-  const total=station.slots.length;
+  const a=getGameActivity(g,stationId),progress=getStationProgress(g,station),total=progress.total,filled=progress.filled;
+  let complete=false,message="";
+  if(stationId==="packaging"||stationId==="geneallele"){
+    const pairs=matchingPairsFor(station);
+    complete=(a.matched||[]).length===pairs.length;
+    message=complete?`Semua ${pairs.length} pasangan gambar dan definisi berhasil dicocokkan.`:`Baru ${(a.matched||[]).length} dari ${pairs.length} pasangan yang benar. Cocokkan semua kartu terlebih dahulu.`;
+  }else if(stationId==="chromosome"){
+    complete=(a.step||0)===hotspotTasks().length;
+    message=complete?"Semua bagian kromosom berhasil diidentifikasi.":"Selesaikan identifikasi telomer, sentromer, dan kromatid terlebih dahulu.";
+  }else if(stationId==="complement"||stationId==="transcription"){
+    const cfg=sequenceConfig(station),letters=a.letters||[];
+    complete=letters.length===cfg.target.length&&letters.every(Boolean)&&letters.every((v,i)=>v===cfg.target[i]);
+    a.checked=true;
+    if(letters.filter(Boolean).length<cfg.target.length)message=`Urutan belum lengkap. Baru ${letters.filter(Boolean).length} dari ${cfg.target.length} posisi terisi.`;
+    else if(complete)message=`Urutan tepat: ${cfg.target.join("")}. Semua basa nitrogen berada pada posisi yang benar.`;
+    else{g.mistakes=(g.mistakes||0)+1;message="Masih ada basa yang tidak sesuai. Periksa aturan pasangan basa, lalu ubah posisi yang keliru.";}
+  }else if(stationId==="classify"){
+    const assigned=a.assigned||{},cats=sortingCategories();
+    complete=Object.keys(assigned).length===station.tokens.length&&station.tokens.every(t=>assigned[t.id]===cats[t.id]);
+    message=complete?"Semua ciri berhasil dikelompokkan dengan benar ke dalam DNA dan RNA.":`${progress.correct} dari ${total} kartu sudah berada pada kelompok yang tepat. Periksa kartu yang masih salah atau belum dikelompokkan.`;
+  }else if(stationId==="monohybrid"||stationId==="dihybrid"){
+    const expectedRatio=stationId==="monohybrid"?"3:1":"9:3:3:1",n=stationId==="monohybrid"?2:4;
+    a.top=a.top||[];a.left=a.left||[];
+    const gametesReady=a.top.length===n&&a.left.length===n&&a.top.every(Boolean)&&a.left.every(Boolean);
+    const gametesCorrect=isGameteSetCorrect(a.top,stationId)&&isGameteSetCorrect(a.left,stationId);
+    complete=gametesReady&&gametesCorrect&&a.ratio===expectedRatio;
+    if(!gametesReady)message="Lengkapi seluruh gamet pada bagian atas dan samping tabel Punnett.";
+    else if(!gametesCorrect){g.mistakes=(g.mistakes||0)+1;message="Kombinasi gamet belum tepat. Pastikan setiap induk menghasilkan seluruh jenis gamet yang mungkin.";}
+    else if(a.ratio!==expectedRatio){g.mistakes=(g.mistakes||0)+1;message=`Gamet sudah benar, tetapi rasio fenotipe belum tepat. Hitung kembali hasil pada tabel Punnett.`;}
+    else message=`Persilangan benar. Rasio fenotipe keturunan adalah ${expectedRatio}.`;
+  }
   g.attempts[stationId]=(g.attempts[stationId]||0)+1;
-  const wrong=station.slots.filter(s=>placements[s.id]&&placements[s.id]!==s.answer).length;
-  g.mistakes=(g.mistakes||0)+wrong;
-  const complete=correct===total;
-  g.stationChecks[stationId]={correct,filled,total,complete};
+  g.stationChecks[stationId]={correct:progress.correct,filled,total,complete};
   g.stationCompleted[stationId]=complete;
-  g.stationFeedback[stationId]=complete
-    ?`Semua ${total} penempatan tepat. Amati hasil eksperimen dan lanjutkan ke stasiun berikutnya.`
-    :`${correct} dari ${total} penempatan sudah tepat; ${filled} slot terisi. Perbaiki bagian yang ditandai, lalu periksa kembali.`;
-  g.selectedToken=null;persist();render();
+  g.stationFeedback[stationId]=message;
+  persist();render();
 }
 function nextGameStation(){
   const g=state.game;if(!g)return;
@@ -1375,7 +1653,7 @@ document.addEventListener("click",event=>{
       case "next-objectives":routeTo("tujuan");break;
       case "back-apersepsi":routeTo("apersepsi");break;
       case "first-material":routeTo("material",0);break;
-      case "material-prev":if(state.route.index===0){routeTo("tujuan");}else{routeTo("material",state.route.index-1);}break;
+      case "material-prev":if(state.route.index===0)routeTo("tujuan");else routeTo("material",state.route.index-1);break;
       case "material-next":if(state.route.index<materials.length-1)routeTo("material",state.route.index+1);else routeTo("game-menu");break;
     }return;
   }
@@ -1423,14 +1701,32 @@ document.addEventListener("click",event=>{
     $("#aboResult").innerHTML=`<div class="data-table-wrap"><table class="data-table"><tr><th>Golongan darah</th><th>Kemungkinan</th></tr>${Object.entries(bloodCounts).map(([k,v])=>`<tr><td>${k}</td><td>${v}/4 (${v*25}%)</td></tr>`).join("")}</table></div>`;
     setFeedback("Kemungkinan golongan darah keturunan berhasil dihitung.",true);return;
   }
-  const labToken=event.target.closest("[data-game-token]");
-  if(labToken&&state.route.screen==="game"){selectGameToken(labToken.dataset.stationId,labToken.dataset.gameToken);return;}
-  const labSlotTarget=event.target.closest("[data-game-slot]");
-  if(labSlotTarget&&state.route.screen==="game"){
-    const stationId=labSlotTarget.dataset.stationId,slotId=labSlotTarget.dataset.gameSlot;
-    if(state.game?.selectedToken?.stationId===stationId)placeGameToken(stationId,slotId,state.game.selectedToken.tokenId);
-    else clearGameSlot(stationId,slotId);
-    return;
+  if(state.route.screen==="game"){
+    const activeGameStation=(labSpecs[state.game.id]||[])[state.game.activeStation||0];
+    const stationId=activeGameStation?.id;
+    if(!stationId)return;
+    const matchImage=event.target.closest("[data-match-image]");
+    if(matchImage){handleMatchingChoice(stationId,"image",matchImage.dataset.matchImage);return;}
+    const matchDefinition=event.target.closest("[data-match-definition]");
+    if(matchDefinition){handleMatchingChoice(stationId,"definition",matchDefinition.dataset.matchDefinition);return;}
+    const hotspot=event.target.closest("[data-hotspot]");
+    if(hotspot){handleHotspotChoice(stationId,hotspot.dataset.hotspot);return;}
+    const sequenceBase=event.target.closest("[data-seq-base]");
+    if(sequenceBase){handleSequenceBase(stationId,sequenceBase.dataset.seqBase);return;}
+    const sequenceSlot=event.target.closest("[data-seq-slot]");
+    if(sequenceSlot){clearSequenceSlot(stationId,Number(sequenceSlot.dataset.seqSlot));return;}
+    const sortCard=event.target.closest("[data-sort-card]");
+    if(sortCard){handleSortingCard(stationId,sortCard.dataset.sortCard);return;}
+    const sortCategory=event.target.closest("[data-sort-category]");
+    if(sortCategory){handleSortingCategory(stationId,sortCategory.dataset.sortCategory);return;}
+    const sortRemove=event.target.closest("[data-sort-remove]");
+    if(sortRemove){removeSortingCard(stationId,sortRemove.dataset.sortRemove);return;}
+    const punnettSlot=event.target.closest("[data-punnett-slot]");
+    if(punnettSlot){setPunnettSlot(stationId,punnettSlot.dataset.punnettSlot,Number(punnettSlot.dataset.index));return;}
+    const punnettOption=event.target.closest("[data-punnett-option]");
+    if(punnettOption){choosePunnettOption(stationId,punnettOption.dataset.punnettOption);return;}
+    const punnettRatio=event.target.closest("[data-punnett-ratio]");
+    if(punnettRatio){choosePunnettRatio(stationId,punnettRatio.dataset.punnettRatio);return;}
   }
   const gameCheck=event.target.closest("[data-game-check]");
   if(gameCheck){checkGameStation(gameCheck.dataset.gameCheck);return;}
@@ -1454,28 +1750,6 @@ document.addEventListener("click",event=>{
   if(event.target.closest("[data-export-xlsx]")){exportXlsx();return;}
 });
 
-
-document.addEventListener("dragstart",event=>{
-  const token=event.target.closest("[data-game-token]");
-  if(!token||state.route.screen!=="game"||!event.dataTransfer)return;
-  event.dataTransfer.effectAllowed="move";
-  event.dataTransfer.setData("text/plain",`${token.dataset.stationId}|${token.dataset.gameToken}`);
-});
-document.addEventListener("dragover",event=>{
-  const slot=event.target.closest("[data-game-slot]");
-  if(slot&&state.route.screen==="game"){event.preventDefault();slot.classList.add("drag-over");}
-});
-document.addEventListener("dragleave",event=>{
-  const slot=event.target.closest("[data-game-slot]");
-  if(slot)slot.classList.remove("drag-over");
-});
-document.addEventListener("drop",event=>{
-  const slot=event.target.closest("[data-game-slot]");
-  if(!slot||state.route.screen!=="game"||!event.dataTransfer)return;
-  event.preventDefault();slot.classList.remove("drag-over");
-  const raw=event.dataTransfer.getData("text/plain"),parts=raw.split("|");
-  if(parts.length===2&&parts[0]===slot.dataset.stationId)placeGameToken(parts[0],slot.dataset.gameSlot,parts[1]);
-});
 
 function checkActivity(type){
   let ok=false,msg="Periksa kembali jawabanmu.";
