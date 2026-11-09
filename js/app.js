@@ -209,7 +209,7 @@ const developerProfiles = [
     role:"PENGEMBANG MATERI",
     name:"Maf'idatul Inayah, S.Pd.",
     institution:"SMP Islam AL Huda Brondong",
-    email:"-",
+    email:"arinaia89@gmail.com",
     instagram:"-",
     facebook:"-",
     image:"profile-02.jpg",
@@ -613,11 +613,11 @@ function renderDeveloperProfile(){
         <div class="developer-profile-details">
           <span class="badge profile-role-badge">${esc(profile.role)}</span>
           <h2>${esc(profile.name)}</h2>
-          <p class="profile-institution"><span aria-hidden="true">▦</span> ${esc(profile.institution)}</p>
+          <p class="profile-institution"><span aria-hidden="true">🏛️</span> ${esc(profile.institution)}</p>
           <div class="profile-contact-list">
-            ${profileContact("✉","E-mail",profile.email)}
-            ${profileContact("◎","Instagram",profile.instagram)}
-            ${profileContact("f","Facebook",profile.facebook)}
+            ${profileContact("📧","E-mail",profile.email)}
+            ${profileContact("🅾","Instagram",profile.instagram)}
+            ${profileContact("ⓕ","Facebook",profile.facebook)}
           </div>
         </div>
       </article>
