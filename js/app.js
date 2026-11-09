@@ -200,8 +200,8 @@ const developerProfiles = [
     name:"Rizqi Anugerah Perdana, S.Kom., M.Pd.",
     institution:"SMP Islam AL Huda Brondong",
     email:"rizqianugerah.perdana@gmail.com",
-    instagram:"-",
-    facebook:"-",
+    instagram:"rizqi_ap26",
+    facebook:"Rizqi Anugerah Perdana",
     image:"profile-01.jpg",
     alt:"Foto profil Rizqi Anugerah Perdana"
   },
@@ -220,8 +220,8 @@ const developerProfiles = [
     name:"Anita Rahayu, S.Pd.",
     institution:"SMP Islam AL Huda Brondong",
     email:"anita.sempia@gmail.com",
-    instagram:"-",
-    facebook:"-",
+    instagram:"anietasabrinazahwa",
+    facebook:"Anieta Sabrina Zahwa",
     image:"profile-03.jpg",
     alt:"Foto profil Anita Rahayu"
   },
