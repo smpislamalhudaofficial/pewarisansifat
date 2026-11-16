@@ -198,7 +198,7 @@ const developerProfiles = [
   {
     role:"PENANGGUNG JAWAB",
     name:"Rizqi Anugerah Perdana, S.Kom., M.Pd.",
-    institution:"SMP Islam AL Huda Brondong",
+    institution:"SMP Islam Al Huda Brondong",
     email:"rizqianugerah.perdana@gmail.com",
     instagram:"rizqi_ap26",
     facebook:"Rizqi Anugerah Perdana",
@@ -208,7 +208,7 @@ const developerProfiles = [
   {
     role:"PENGEMBANG MATERI",
     name:"Maf'idatul Inayah, S.Pd.",
-    institution:"SMP Islam AL Huda Brondong",
+    institution:"SMP Islam Al Huda Brondong",
     email:"arinaia89@gmail.com",
     instagram:"-",
     facebook:"-",
@@ -218,7 +218,7 @@ const developerProfiles = [
   {
     role:"PENGEMBANG MATERI",
     name:"Anita Rahayu, S.Pd.",
-    institution:"SMP Islam AL Huda Brondong",
+    institution:"SMP Islam Al Huda Brondong",
     email:"anita.sempia@gmail.com",
     instagram:"anietasabrinazahwa",
     facebook:"Anieta Sabrina Zahwa",
@@ -228,7 +228,7 @@ const developerProfiles = [
   {
     role:"PENGEMBANG MEDIA",
     name:"Faishal Al Idrus",
-    institution:"SMP Islam AL Huda Brondong",
+    institution:"SMP Islam Al Huda Brondong",
     email:"alidrus.faishal@gmail.com",
     instagram:"ide.faishal",
     facebook:"-",
